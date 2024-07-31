@@ -1,0 +1,51 @@
+.features {
+  .container {
+    section {
+      background-color: #f5fdc2;
+      display: flex;
+      justify-content: space-evenly;
+      padding: 1rem 0;
+      .content {
+        display: flex;
+        justify-content: space-between;
+        flex-basis: 20%;
+        gap: 1rem;
+        .image {
+          background-color: $primary-color;
+          width: 46px;
+          height: 46px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          img {
+            width: 24px;
+            height: 24px;
+          }
+        }
+        .text {
+          width: 208px;
+          h4 {
+            text-transform: capitalize;
+            color: $primary-color;
+            font-weight: 700;
+          }
+          p {
+            line-height: 1.3;
+            color: $secondary-text-color;
+          }
+        }
+      }
+    }
+  }
+}
+@include breakpoints(medium) {
+  .features {
+    background-color: #f5fdc2;
+    section {
+      .content:not(:first-of-type) {
+        display: none;
+      }
+    }
+  }
+}

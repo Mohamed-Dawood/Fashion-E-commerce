@@ -1,0 +1,105 @@
+aside {
+  transition: $transition-duration;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  background-color: $main-text-color;
+  width: 350px;
+  height: 100%;
+  position: fixed;
+  left: -350px;
+  z-index: 9;
+  padding: 1rem;
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h3 {
+      font-weight: 900;
+    }
+    p {
+      color: $secondary-text-color;
+    }
+    .close {
+      svg {
+        cursor: pointer;
+      }
+    }
+  }
+  .user {
+    display: flex;
+    background-color: $tertiary-color;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7rem;
+    .user-image {
+      flex-basis: 15%;
+      display: inherit;
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+    .user-info {
+      width: 70%;
+      p {
+        word-wrap: break-word;
+        line-height: 1;
+        font-size: 13px;
+        color: $secondary-text-color;
+      }
+    }
+    .user-logout {
+      flex-basis: 5%;
+      svg {
+        rotate: 180deg;
+      }
+    }
+  }
+  .links {
+    padding: 0.5rem 0;
+    ul {
+      li {
+        padding: 0.7rem 0;
+        transition: $transition-duration;
+        font-weight: 700;
+        &:hover {
+          background-color: $tertiary-color;
+          cursor: pointer;
+        }
+        a {
+          color: $primary-color;
+          svg {
+            margin-right: 0.7rem;
+          }
+        }
+      }
+    }
+  }
+  .accordions {
+    h5 {
+      color: $secondary-text-color;
+    }
+    .accordion {
+      .accordion-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        h4 {
+          color: $primary-color;
+        }
+      }
+    }
+    ul {
+      display: none;
+      li {
+        a {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+.open {
+  left: 0;
+}

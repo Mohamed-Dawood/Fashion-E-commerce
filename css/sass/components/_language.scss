@@ -1,0 +1,40 @@
+.language {
+  background-color: $secondary-color;
+  color: $primary-color;
+  height: 48px;
+  // display: flex;
+  // align-items: center;
+  line-height: 48px;
+  .container {
+    display: flex;
+    div {
+      display: flex;
+      flex-basis: 5%;
+      align-items: center;
+      justify-content: space-between;
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    section {
+      // 5% from left and 5% from right
+      flex-basis: 90%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      p {
+        margin: 0 10rem;
+        font-weight: 500;
+      }
+      svg {
+        font-size: 24px;
+      }
+    }
+  }
+}
+@include breakpoints(medium) {
+  .language {
+    display: none !important;
+  }
+}

@@ -1,0 +1,58 @@
+.trending {
+  padding: $main-padding 0;
+  .container {
+    position: relative;
+    .view-all {
+      color: $primary-color;
+      padding: 0.5rem 1rem;
+      border: 2px solid $primary-color;
+      background-color: unset;
+      text-transform: uppercase;
+      font-weight: 700;
+      display: none;
+      margin: 2rem auto;
+      cursor: pointer;
+      font-size: 20px;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      background-color: rgb(255, 255, 255, 0.7);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      position: absolute;
+      box-shadow: 0.5px 0px 4px 1px #e4e4e4;
+      &::after {
+        font-size: 16px;
+        color: $primary-color;
+        font-weight: bold;
+      }
+    }
+    .swiper-button-next {
+      // 25px half of button + 10 px padding of container
+      right: -15px;
+    }
+    .swiper-button-prev {
+      left: -15px;
+    }
+  }
+}
+@include breakpoints(medium) {
+  .trending {
+    .container {
+      .view-all {
+        display: block;
+      }
+    }
+  }
+}
+@include breakpoints(medium) {
+  .trending {
+    .container {
+      .swiper-button-next,
+      .swiper-button-prev {
+        display: none;
+      }
+    }
+  }
+}

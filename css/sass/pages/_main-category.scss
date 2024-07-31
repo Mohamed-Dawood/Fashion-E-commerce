@@ -1,0 +1,55 @@
+.category {
+  padding: $main-padding 0;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    figure {
+      flex-basis: 30%;
+      position: relative;
+      overflow: hidden;
+      &:hover button {
+        bottom: 16%;
+      }
+      .image {
+        max-width: 420px;
+        height: 484px;
+        img {
+          max-width: 100%;
+          height: 100%;
+        }
+      }
+      span,
+      button {
+        text-align: center;
+        position: absolute;
+        bottom: 30%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgb(255 255 255 / 70%);
+        padding: 0 2rem;
+        font-size: 31px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $primary-color;
+      }
+      button {
+        transition: $transition-duration;
+        background-color: $secondary-color;
+        bottom: -15%;
+        padding: 1rem;
+        font-size: unset;
+        width: 80%;
+        cursor: pointer;
+      }
+    }
+  }
+}
+@include breakpoints(medium) {
+  .category {
+    .container {
+      flex-direction: column;
+    }
+  }
+}

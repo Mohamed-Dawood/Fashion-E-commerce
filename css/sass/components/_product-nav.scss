@@ -1,0 +1,27 @@
+.product-nav {
+  background-color: $primary-color;
+  .container {
+    ul {
+      display: flex;
+      li:not(:first-of-type) {
+        margin: 0 1rem;
+      }
+      a {
+        color: $main-text-color;
+      }
+    }
+  }
+}
+@include breakpoints(medium) {
+  .product-nav {
+    ul {
+      justify-content: space-between;
+      li {
+        margin: 0 0 0 0 !important;
+        a {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+.myFirstSwiper {
+  background-color: $primary-color;
+  .swiper-wrapper {
+    .swiper-slide {
+      section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        .image {
+          flex-basis: 45%;
+          align-items: center;
+          display: inherit;
+          justify-content: center;
+          img {
+            height: 300px;
+            max-width: 100%;
+          }
+        }
+        .info {
+          flex-basis: 45%;
+          .wrapper {
+            width: 80%;
+            text-align: center;
+            margin: auto;
+            h1 {
+              font-size: 50px;
+              text-transform: capitalize;
+              line-height: 1.1;
+              text-align: center;
+            }
+            p {
+              width: 70%;
+              margin: 1rem auto 0;
+              line-height: 1.2;
+            }
+          }
+        }
+      }
+    }
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    background-color: $tertiary-color;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid $secondary-text-color;
+    &::after {
+      font-size: 16px;
+      color: $primary-color;
+    }
+  }
+}
+@include breakpoints(medium) {
+  .myFirstSwiper {
+    .swiper-wrapper {
+      .swiper-slide {
+        section {
+          padding: 0;
+          .image,
+          .info {
+            flex-basis: 49%;
+          }
+          .info {
+            .wrapper {
+              // width: 90%;
+              h1 {
+                font-size: 30px;
+              }
+              p {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: none;
+    }
+  }
+}
+@include breakpoints(verySmall) {
+  .wrapper {
+    h1 {
+      font-size: 25px !important;
+    }
+  }
+}
