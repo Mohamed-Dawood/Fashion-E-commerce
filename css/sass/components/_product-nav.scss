@@ -1,10 +1,46 @@
 .product-nav {
   background-color: $primary-color;
   .container {
-    ul {
+    > ul {
       display: flex;
-      li:not(:first-of-type) {
-        margin: 0 1rem;
+      gap: 20px;
+      > li {
+        position: relative;
+        border-bottom: 4px solid transparent;
+        // add this to make text in center not have only border bottom
+        border-top: 4px solid transparent;
+        transition: $transition-duration;
+        color: $primary-color;
+        @at-root {
+          .product-nav .container > ul > li:has(ul) {
+            &:hover {
+              border-bottom: 4px solid $secondary-color;
+            }
+          }
+        }
+        ul {
+          transition: $transition-duration;
+          position: absolute;
+          background-color: $main-text-color;
+          // width of ul and 4px of border
+          top: calc(100% + 4px);
+          display: none;
+          padding: 0.5rem;
+          li {
+            padding: 0 1rem;
+            text-wrap: nowrap;
+            text-transform: capitalize;
+            cursor: pointer;
+            &:hover {
+              background-color: $tertiary-color;
+            }
+          }
+        }
+        &:hover {
+          > ul {
+            display: block;
+          }
+        }
       }
       a {
         color: $main-text-color;

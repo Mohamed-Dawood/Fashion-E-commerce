@@ -1,7 +1,8 @@
-var swiper = new Swiper('.myFirstSwiper', {
+// Initialize the first Swiper instance
+var myFirstSwiper = new Swiper('.myFirstSwiper', {
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.myFirstSwiper .swiper-button-next',
+    prevEl: '.myFirstSwiper .swiper-button-prev',
   },
   loop: true,
   autoplay: {
@@ -9,59 +10,66 @@ var swiper = new Swiper('.myFirstSwiper', {
   },
 });
 
+// Initialize the second Swiper instance
+// var mySwiper = new Swiper('.mySwiper', {
 //   slidesPerView: 1,
-//   // spaceBetween: 10,
-//   // loop: true,
-
-//   pagination: {
-//     el: '.swiper-pagination',
-//     clickable: true,
-//   },
+//   spaceBetween: 30, // Set space between slides
+//   loop: true,
 //   navigation: {
-//     nextEl: '.swiper-button-next',
-//     prevEl: '.swiper-button-prev',
+//     nextEl: '.product-slider .swiper-button-next',
+//     prevEl: '.product-slider .swiper-button-prev',
 //   },
 //   breakpoints: {
-//     '@0.00': {
+//     0: {
 //       slidesPerView: 1,
-//       spaceBetween: 10,
+//       spaceBetween: 30,
 //     },
-//     '@0.75': {
+//     768: {
+//       // Medium screens (e.g., tablets)
 //       slidesPerView: 2,
-//       spaceBetween: 20,
+//       spaceBetween: 30,
 //     },
-//     '@1.00': {
-//       slidesPerView: 3,
-//       spaceBetween: 40,
-//     },
-//     '@1.50': {
+//     1024: {
+//       // Large screens (e.g., desktops)
 //       slidesPerView: 4,
-//       spaceBetween: 50,
+//       spaceBetween: 30,
 //     },
 //   },
 // });
-var swiper = new Swiper('.mySwiper', {
-  slidesPerView: 1,
-  spaceBetween: 30, // Set space between slides
-  loop: true,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
-      spaceBetween: 30,
+
+function initializeSwiper(selector, nextEl, prevEl) {
+  return new Swiper(selector, {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    navigation: {
+      nextEl: nextEl,
+      prevEl: prevEl,
     },
-    768: {
-      // Medium screens (e.g., tablets)
-      slidesPerView: 2,
-      spaceBetween: 30,
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 30,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
     },
-    1024: {
-      // Large screens (e.g., desktops)
-      slidesPerView: 4,
-      spaceBetween: 30,
-    },
-  },
-});
+  });
+}
+
+var mySwiperTrending = initializeSwiper(
+  '.mySwiperTrending',
+  '.trending-next',
+  '.trending-prev'
+);
+var mySwiperCollection = initializeSwiper(
+  '.mySwiperCollection',
+  '.collection-next',
+  '.collection-prev'
+);

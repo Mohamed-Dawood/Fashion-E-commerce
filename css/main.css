@@ -170,6 +170,9 @@ nav .container .middle-nav .search input {
   caret-color: #020127;
   font-weight: 400;
 }
+nav .container .middle-nav .search input:hover, nav .container .middle-nav .search input:focus {
+  background-color: rgba(226, 227, 233, 0.5);
+}
 nav .container .middle-nav .search svg {
   position: absolute;
   left: 0.5rem;
@@ -258,13 +261,42 @@ nav .container .right-nav .shopping .cart span {
 .product-nav {
   background-color: #020127;
 }
-.product-nav .container ul {
+.product-nav .container > ul {
   display: flex;
+  gap: 20px;
 }
-.product-nav .container ul li:not(:first-of-type) {
-  margin: 0 1rem;
+.product-nav .container > ul > li {
+  position: relative;
+  border-bottom: 4px solid transparent;
+  border-top: 4px solid transparent;
+  transition: 0.3s;
+  color: #020127;
 }
-.product-nav .container ul a {
+.product-nav .container > ul > li:has(ul):hover {
+  border-bottom: 4px solid #dbfc08;
+}
+
+.product-nav .container > ul > li ul {
+  transition: 0.3s;
+  position: absolute;
+  background-color: #fff;
+  top: calc(100% + 4px);
+  display: none;
+  padding: 0.5rem;
+}
+.product-nav .container > ul > li ul li {
+  padding: 0 1rem;
+  text-wrap: nowrap;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.product-nav .container > ul > li ul li:hover {
+  background-color: #e2e3e9;
+}
+.product-nav .container > ul > li:hover > ul {
+  display: block;
+}
+.product-nav .container > ul a {
   color: #fff;
 }
 
@@ -630,15 +662,18 @@ aside .accordions ul li a {
     display: none;
   }
 }
-.mySwiper .swiper-wrapper .swiper-slide section .image {
+.mySwiperCollection .swiper-wrapper .swiper-slide section .image,
+.mySwiperTrending .swiper-wrapper .swiper-slide section .image {
   width: 310px;
   height: 375px;
   position: relative;
 }
-.mySwiper .swiper-wrapper .swiper-slide section .image img {
+.mySwiperCollection .swiper-wrapper .swiper-slide section .image img,
+.mySwiperTrending .swiper-wrapper .swiper-slide section .image img {
   max-width: 100%;
 }
-.mySwiper .swiper-wrapper .swiper-slide section .image span {
+.mySwiperCollection .swiper-wrapper .swiper-slide section .image span,
+.mySwiperTrending .swiper-wrapper .swiper-slide section .image span {
   position: absolute;
   top: 1rem;
   left: 1rem;
@@ -650,7 +685,8 @@ aside .accordions ul li a {
      -moz-user-select: none;
           user-select: none;
 }
-.mySwiper .swiper-wrapper .swiper-slide section .image .addToWishlist {
+.mySwiperCollection .swiper-wrapper .swiper-slide section .image .addToWishlist,
+.mySwiperTrending .swiper-wrapper .swiper-slide section .image .addToWishlist {
   position: absolute;
   top: 1rem;
   right: 1.5rem;
@@ -665,47 +701,58 @@ aside .accordions ul li a {
   align-items: center;
   justify-content: center;
 }
-.mySwiper .swiper-wrapper .swiper-slide section .image .addToWishlist svg {
+.mySwiperCollection .swiper-wrapper .swiper-slide section .image .addToWishlist svg,
+.mySwiperTrending .swiper-wrapper .swiper-slide section .image .addToWishlist svg {
   font-size: 24px;
   color: #020127;
 }
-.mySwiper .swiper-wrapper .swiper-slide section .info h4 {
+.mySwiperCollection .swiper-wrapper .swiper-slide section .info h4,
+.mySwiperTrending .swiper-wrapper .swiper-slide section .info h4 {
   color: #020127;
 }
-.mySwiper .swiper-wrapper .swiper-slide section .info p {
+.mySwiperCollection .swiper-wrapper .swiper-slide section .info p,
+.mySwiperTrending .swiper-wrapper .swiper-slide section .info p {
   display: flex;
   align-items: center;
 }
-.mySwiper .swiper-wrapper .swiper-slide section .info p svg {
+.mySwiperCollection .swiper-wrapper .swiper-slide section .info p svg,
+.mySwiperTrending .swiper-wrapper .swiper-slide section .info p svg {
   margin-right: 0.5rem;
   color: #e2e3e9;
 }
-.mySwiper .swiper-wrapper .swiper-slide section .info p .rated {
+.mySwiperCollection .swiper-wrapper .swiper-slide section .info p .rated,
+.mySwiperTrending .swiper-wrapper .swiper-slide section .info p .rated {
   color: gold;
 }
-.mySwiper .swiper-wrapper .swiper-slide section .info p small {
+.mySwiperCollection .swiper-wrapper .swiper-slide section .info p small,
+.mySwiperTrending .swiper-wrapper .swiper-slide section .info p small {
   margin-left: 2rem;
   color: #020127;
   font-size: 13px;
   font-weight: 400;
 }
-.mySwiper .swiper-wrapper .swiper-slide section .info p small span {
+.mySwiperCollection .swiper-wrapper .swiper-slide section .info p small span,
+.mySwiperTrending .swiper-wrapper .swiper-slide section .info p small span {
   color: #5b6584 !important;
 }
-.mySwiper .swiper-wrapper .swiper-slide section .info .price {
+.mySwiperCollection .swiper-wrapper .swiper-slide section .info .price,
+.mySwiperTrending .swiper-wrapper .swiper-slide section .info .price {
   display: flex;
   align-items: center;
   gap: 12px;
   margin-top: 0.5rem;
 }
-.mySwiper .swiper-wrapper .swiper-slide section .info .price h3 {
+.mySwiperCollection .swiper-wrapper .swiper-slide section .info .price h3,
+.mySwiperTrending .swiper-wrapper .swiper-slide section .info .price h3 {
   color: #020127;
   text-wrap: nowrap;
 }
-.mySwiper .swiper-wrapper .swiper-slide section .info .price del {
+.mySwiperCollection .swiper-wrapper .swiper-slide section .info .price del,
+.mySwiperTrending .swiper-wrapper .swiper-slide section .info .price del {
   color: #5b6584;
 }
-.mySwiper .swiper-wrapper .swiper-slide section .info .price span {
+.mySwiperCollection .swiper-wrapper .swiper-slide section .info .price span,
+.mySwiperTrending .swiper-wrapper .swiper-slide section .info .price span {
   background-color: rgba(255, 51, 51, 0.1);
   padding: 0.4rem 1.6rem;
   border-radius: 62px;

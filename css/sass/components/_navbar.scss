@@ -58,6 +58,10 @@ nav {
           color: $secondary-text-color;
           caret-color: $primary-color;
           font-weight: 400;
+          &:hover,
+          &:focus {
+            background-color: rgb(226, 227, 233, 0.5);
+          }
         }
         svg {
           position: absolute;
