@@ -60,8 +60,8 @@ footer {
       }
     }
     .copy-right {
-      padding-top: $main-padding / 2;
-      padding-bottom: $main-padding / 2;
+      padding-top: calc($main-padding / 2);
+      padding-bottom: calc($main-padding / 2);
       display: flex;
       justify-content: space-between;
       p {

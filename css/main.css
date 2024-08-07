@@ -197,6 +197,7 @@ nav .container .right-nav .login svg {
 nav .container .right-nav .shopping {
   display: inherit;
   justify-content: space-between;
+  position: relative;
 }
 nav .container .right-nav .shopping .wishlist {
   border-right: 1px solid #e2e3e9;
@@ -211,8 +212,8 @@ nav .container .right-nav .shopping .wishlist svg,
 nav .container .right-nav .shopping .cart svg {
   font-size: 24px;
 }
-nav .container .right-nav .shopping .wishlist span,
-nav .container .right-nav .shopping .cart span {
+nav .container .right-nav .shopping .wishlist > span,
+nav .container .right-nav .shopping .cart > span {
   position: absolute;
   top: -10px;
   left: calc(50% - 10px);
@@ -258,6 +259,226 @@ nav .container .right-nav .shopping .cart span {
     font-size: 16px;
   }
 }
+.minWishlist,
+.mincart {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: #fff;
+  width: 385px;
+  padding: 1rem;
+  z-index: 1;
+}
+.minWishlist .content .wishlistTitle h3,
+.minWishlist .content .cartTitle h3,
+.mincart .content .wishlistTitle h3,
+.mincart .content .cartTitle h3 {
+  text-transform: capitalize;
+  color: #020127;
+}
+.minWishlist .content .wishlistTitle p,
+.minWishlist .content .cartTitle p,
+.mincart .content .wishlistTitle p,
+.mincart .content .cartTitle p {
+  color: #5b6584;
+  line-height: 1;
+}
+.minWishlist .content .wishlistItems,
+.minWishlist .content .cartItems,
+.mincart .content .wishlistItems,
+.mincart .content .cartItems {
+  height: 376px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+.minWishlist .content .wishlistItems .wishlistItem,
+.minWishlist .content .wishlistItems .cartItem,
+.minWishlist .content .cartItems .wishlistItem,
+.minWishlist .content .cartItems .cartItem,
+.mincart .content .wishlistItems .wishlistItem,
+.mincart .content .wishlistItems .cartItem,
+.mincart .content .cartItems .wishlistItem,
+.mincart .content .cartItems .cartItem {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.minWishlist .content .wishlistItems .wishlistItem .image img,
+.minWishlist .content .wishlistItems .cartItem .image img,
+.minWishlist .content .cartItems .wishlistItem .image img,
+.minWishlist .content .cartItems .cartItem .image img,
+.mincart .content .wishlistItems .wishlistItem .image img,
+.mincart .content .wishlistItems .cartItem .image img,
+.mincart .content .cartItems .wishlistItem .image img,
+.mincart .content .cartItems .cartItem .image img {
+  width: 115px;
+  height: 100%;
+}
+.minWishlist .content .wishlistItems .wishlistItem .wishlistDetails h3,
+.minWishlist .content .wishlistItems .wishlistItem .cartDetails h3,
+.minWishlist .content .wishlistItems .cartItem .wishlistDetails h3,
+.minWishlist .content .wishlistItems .cartItem .cartDetails h3,
+.minWishlist .content .cartItems .wishlistItem .wishlistDetails h3,
+.minWishlist .content .cartItems .wishlistItem .cartDetails h3,
+.minWishlist .content .cartItems .cartItem .wishlistDetails h3,
+.minWishlist .content .cartItems .cartItem .cartDetails h3,
+.mincart .content .wishlistItems .wishlistItem .wishlistDetails h3,
+.mincart .content .wishlistItems .wishlistItem .cartDetails h3,
+.mincart .content .wishlistItems .cartItem .wishlistDetails h3,
+.mincart .content .wishlistItems .cartItem .cartDetails h3,
+.mincart .content .cartItems .wishlistItem .wishlistDetails h3,
+.mincart .content .cartItems .wishlistItem .cartDetails h3,
+.mincart .content .cartItems .cartItem .wishlistDetails h3,
+.mincart .content .cartItems .cartItem .cartDetails h3 {
+  color: #020127;
+  text-wrap: nowrap;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+.minWishlist .content .wishlistItems .wishlistItem .wishlistDetails section,
+.minWishlist .content .wishlistItems .wishlistItem .cartDetails section,
+.minWishlist .content .wishlistItems .cartItem .wishlistDetails section,
+.minWishlist .content .wishlistItems .cartItem .cartDetails section,
+.minWishlist .content .cartItems .wishlistItem .wishlistDetails section,
+.minWishlist .content .cartItems .wishlistItem .cartDetails section,
+.minWishlist .content .cartItems .cartItem .wishlistDetails section,
+.minWishlist .content .cartItems .cartItem .cartDetails section,
+.mincart .content .wishlistItems .wishlistItem .wishlistDetails section,
+.mincart .content .wishlistItems .wishlistItem .cartDetails section,
+.mincart .content .wishlistItems .cartItem .wishlistDetails section,
+.mincart .content .wishlistItems .cartItem .cartDetails section,
+.mincart .content .cartItems .wishlistItem .wishlistDetails section,
+.mincart .content .cartItems .wishlistItem .cartDetails section,
+.mincart .content .cartItems .cartItem .wishlistDetails section,
+.mincart .content .cartItems .cartItem .cartDetails section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+}
+.minWishlist .content .wishlistItems .wishlistItem .wishlistDetails section h4,
+.minWishlist .content .wishlistItems .wishlistItem .cartDetails section h4,
+.minWishlist .content .wishlistItems .cartItem .wishlistDetails section h4,
+.minWishlist .content .wishlistItems .cartItem .cartDetails section h4,
+.minWishlist .content .cartItems .wishlistItem .wishlistDetails section h4,
+.minWishlist .content .cartItems .wishlistItem .cartDetails section h4,
+.minWishlist .content .cartItems .cartItem .wishlistDetails section h4,
+.minWishlist .content .cartItems .cartItem .cartDetails section h4,
+.mincart .content .wishlistItems .wishlistItem .wishlistDetails section h4,
+.mincart .content .wishlistItems .wishlistItem .cartDetails section h4,
+.mincart .content .wishlistItems .cartItem .wishlistDetails section h4,
+.mincart .content .wishlistItems .cartItem .cartDetails section h4,
+.mincart .content .cartItems .wishlistItem .wishlistDetails section h4,
+.mincart .content .cartItems .wishlistItem .cartDetails section h4,
+.mincart .content .cartItems .cartItem .wishlistDetails section h4,
+.mincart .content .cartItems .cartItem .cartDetails section h4 {
+  text-transform: uppercase;
+  color: #020127;
+}
+.minWishlist .content .wishlistItems .wishlistItem .wishlistDetails section p,
+.minWishlist .content .wishlistItems .wishlistItem .cartDetails section p,
+.minWishlist .content .wishlistItems .cartItem .wishlistDetails section p,
+.minWishlist .content .wishlistItems .cartItem .cartDetails section p,
+.minWishlist .content .cartItems .wishlistItem .wishlistDetails section p,
+.minWishlist .content .cartItems .wishlistItem .cartDetails section p,
+.minWishlist .content .cartItems .cartItem .wishlistDetails section p,
+.minWishlist .content .cartItems .cartItem .cartDetails section p,
+.mincart .content .wishlistItems .wishlistItem .wishlistDetails section p,
+.mincart .content .wishlistItems .wishlistItem .cartDetails section p,
+.mincart .content .wishlistItems .cartItem .wishlistDetails section p,
+.mincart .content .wishlistItems .cartItem .cartDetails section p,
+.mincart .content .cartItems .wishlistItem .wishlistDetails section p,
+.mincart .content .cartItems .wishlistItem .cartDetails section p,
+.mincart .content .cartItems .cartItem .wishlistDetails section p,
+.mincart .content .cartItems .cartItem .cartDetails section p {
+  color: #5b6584;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  line-height: 1;
+}
+.minWishlist .content .wishlistItems .wishlistItem .wishlistDetails section p span,
+.minWishlist .content .wishlistItems .wishlistItem .cartDetails section p span,
+.minWishlist .content .wishlistItems .cartItem .wishlistDetails section p span,
+.minWishlist .content .wishlistItems .cartItem .cartDetails section p span,
+.minWishlist .content .cartItems .wishlistItem .wishlistDetails section p span,
+.minWishlist .content .cartItems .wishlistItem .cartDetails section p span,
+.minWishlist .content .cartItems .cartItem .wishlistDetails section p span,
+.minWishlist .content .cartItems .cartItem .cartDetails section p span,
+.mincart .content .wishlistItems .wishlistItem .wishlistDetails section p span,
+.mincart .content .wishlistItems .wishlistItem .cartDetails section p span,
+.mincart .content .wishlistItems .cartItem .wishlistDetails section p span,
+.mincart .content .wishlistItems .cartItem .cartDetails section p span,
+.mincart .content .cartItems .wishlistItem .wishlistDetails section p span,
+.mincart .content .cartItems .wishlistItem .cartDetails section p span,
+.mincart .content .cartItems .cartItem .wishlistDetails section p span,
+.mincart .content .cartItems .cartItem .cartDetails section p span {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 1.5px solid #5b6584;
+}
+.minWishlist .content .wishlistItems .wishlistItem .wishlistDetails .quantity h3,
+.minWishlist .content .wishlistItems .wishlistItem .cartDetails .quantity h3,
+.minWishlist .content .wishlistItems .cartItem .wishlistDetails .quantity h3,
+.minWishlist .content .wishlistItems .cartItem .cartDetails .quantity h3,
+.minWishlist .content .cartItems .wishlistItem .wishlistDetails .quantity h3,
+.minWishlist .content .cartItems .wishlistItem .cartDetails .quantity h3,
+.minWishlist .content .cartItems .cartItem .wishlistDetails .quantity h3,
+.minWishlist .content .cartItems .cartItem .cartDetails .quantity h3,
+.mincart .content .wishlistItems .wishlistItem .wishlistDetails .quantity h3,
+.mincart .content .wishlistItems .wishlistItem .cartDetails .quantity h3,
+.mincart .content .wishlistItems .cartItem .wishlistDetails .quantity h3,
+.mincart .content .wishlistItems .cartItem .cartDetails .quantity h3,
+.mincart .content .cartItems .wishlistItem .wishlistDetails .quantity h3,
+.mincart .content .cartItems .wishlistItem .cartDetails .quantity h3,
+.mincart .content .cartItems .cartItem .wishlistDetails .quantity h3,
+.mincart .content .cartItems .cartItem .cartDetails .quantity h3 {
+  text-transform: uppercase;
+}
+.minWishlist .content .wishlistItems .wishlistItem .wishlistDetails .quantity p,
+.minWishlist .content .wishlistItems .wishlistItem .cartDetails .quantity p,
+.minWishlist .content .wishlistItems .cartItem .wishlistDetails .quantity p,
+.minWishlist .content .wishlistItems .cartItem .cartDetails .quantity p,
+.minWishlist .content .cartItems .wishlistItem .wishlistDetails .quantity p,
+.minWishlist .content .cartItems .wishlistItem .cartDetails .quantity p,
+.minWishlist .content .cartItems .cartItem .wishlistDetails .quantity p,
+.minWishlist .content .cartItems .cartItem .cartDetails .quantity p,
+.mincart .content .wishlistItems .wishlistItem .wishlistDetails .quantity p,
+.mincart .content .wishlistItems .wishlistItem .cartDetails .quantity p,
+.mincart .content .wishlistItems .cartItem .wishlistDetails .quantity p,
+.mincart .content .wishlistItems .cartItem .cartDetails .quantity p,
+.mincart .content .cartItems .wishlistItem .wishlistDetails .quantity p,
+.mincart .content .cartItems .wishlistItem .cartDetails .quantity p,
+.mincart .content .cartItems .cartItem .wishlistDetails .quantity p,
+.mincart .content .cartItems .cartItem .cartDetails .quantity p {
+  color: #5b6584;
+  line-height: 1;
+}
+.minWishlist .content .buttons,
+.mincart .content .buttons {
+  width: 100%;
+}
+.minWishlist .content .buttons button,
+.mincart .content .buttons button {
+  text-transform: uppercase;
+  width: 100%;
+  padding: 1rem;
+  background: none;
+  border: 2px solid #020127;
+  letter-spacing: 2px;
+  font-weight: 900;
+  margin-top: 1rem;
+  color: #020127;
+  cursor: pointer;
+}
+.minWishlist .content .buttons .check-out,
+.mincart .content .buttons .check-out {
+  background-color: #dbfc08;
+  border: none;
+}
+
 .product-nav {
   background-color: #020127;
 }
@@ -564,10 +785,10 @@ aside .accordions ul li a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
 }
 .category .container figure {
-  flex-basis: 30%;
+  flex-basis: 32%;
   position: relative;
   overflow: hidden;
 }
@@ -737,27 +958,7 @@ aside .accordions ul li a {
 }
 .mySwiperCollection .swiper-wrapper .swiper-slide section .info .price,
 .mySwiperTrending .swiper-wrapper .swiper-slide section .info .price {
-  display: flex;
-  align-items: center;
-  gap: 12px;
   margin-top: 0.5rem;
-}
-.mySwiperCollection .swiper-wrapper .swiper-slide section .info .price h3,
-.mySwiperTrending .swiper-wrapper .swiper-slide section .info .price h3 {
-  color: #020127;
-  text-wrap: nowrap;
-}
-.mySwiperCollection .swiper-wrapper .swiper-slide section .info .price del,
-.mySwiperTrending .swiper-wrapper .swiper-slide section .info .price del {
-  color: #5b6584;
-}
-.mySwiperCollection .swiper-wrapper .swiper-slide section .info .price span,
-.mySwiperTrending .swiper-wrapper .swiper-slide section .info .price span {
-  background-color: rgba(255, 51, 51, 0.1);
-  padding: 0.4rem 1.6rem;
-  border-radius: 62px;
-  color: #ff3333;
-  font-weight: 700;
 }
 
 @media (max-width: 992px) {
@@ -766,6 +967,26 @@ aside .accordions ul li a {
     justify-content: center;
   }
 }
+.price {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.price > h3 {
+  color: #020127;
+  text-wrap: nowrap;
+}
+.price > del {
+  color: #5b6584;
+}
+.price > span {
+  background-color: rgba(255, 51, 51, 0.1);
+  padding: 0.4rem 1.6rem;
+  border-radius: 62px;
+  color: #ff3333;
+  font-weight: 700;
+}
+
 footer {
   background-color: #e2e3e9;
 }

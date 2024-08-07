@@ -65,4 +65,34 @@ $(function () {
     $(this).find('svg').attr('data-prefix', 'fas');
   });
   // start add to wish list
+
+  // start open shopping
+  let openElement = null;
+
+  function setupToggle(triggerSelector, targetSelector) {
+    $(triggerSelector).on('click', function (event) {
+      if (openElement && openElement !== targetSelector) {
+        $(openElement).fadeOut(1000);
+      }
+
+      $(targetSelector).fadeToggle(1000);
+      openElement = $(targetSelector).is(':visible') ? targetSelector : null;
+      event.stopPropagation();
+    });
+
+    $(targetSelector).on('click', function (event) {
+      event.stopPropagation();
+    });
+
+    $(document).on('click', function () {
+      $(targetSelector).fadeOut(1000);
+      openElement = null;
+    });
+  }
+
+  setupToggle('.cart', '.mincart');
+
+  setupToggle('.wishlist', '.minWishlist');
+
+  // end open shopping
 });
