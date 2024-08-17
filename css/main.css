@@ -87,10 +87,15 @@ button {
   flex-basis: 5%;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
 }
 .language .container div img {
   width: 24px;
   height: 24px;
+}
+.language .container div p {
+  letter-spacing: 1.5px;
+  font-weight: bold;
 }
 .language .container section {
   flex-basis: 90%;
@@ -479,6 +484,12 @@ nav .container .right-nav .shopping .cart > span {
   border: none;
 }
 
+@media (max-width: 480px) {
+  .minWishlist,
+  .mincart {
+    display: none !important;
+  }
+}
 .product-nav {
   background-color: #020127;
 }
@@ -492,6 +503,7 @@ nav .container .right-nav .shopping .cart > span {
   border-top: 4px solid transparent;
   transition: 0.3s;
   color: #020127;
+  text-transform: capitalize;
 }
 .product-nav .container > ul > li:has(ul):hover {
   border-bottom: 4px solid #dbfc08;
@@ -524,6 +536,7 @@ nav .container .right-nav .shopping .cart > span {
 @media (max-width: 992px) {
   .product-nav ul {
     justify-content: space-between;
+    gap: 10px !important;
   }
   .product-nav ul li {
     margin: 0 0 0 0 !important;
@@ -651,6 +664,7 @@ aside .accordions ul li a {
 
 .myFirstSwiper {
   background-color: #020127;
+  direction: ltr;
 }
 .myFirstSwiper .swiper-wrapper .swiper-slide section {
   display: flex;
@@ -858,6 +872,7 @@ aside .accordions ul li a {
   border-radius: 50%;
   position: absolute;
   box-shadow: 0.5px 0px 4px 1px #e4e4e4;
+  z-index: 1;
 }
 .trending .container .swiper-button-next::after,
 .trending .container .swiper-button-prev::after {
@@ -882,6 +897,10 @@ aside .accordions ul li a {
   .trending .container .swiper-button-prev {
     display: none;
   }
+}
+.mySwiperCollection,
+.mySwiperTrending {
+  direction: ltr;
 }
 .mySwiperCollection .swiper-wrapper .swiper-slide section .image,
 .mySwiperTrending .swiper-wrapper .swiper-slide section .image {

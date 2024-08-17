@@ -1,7 +1,6 @@
 .minWishlist,
 .mincart {
   display: none;
-  // opacity: 0;
   position: absolute;
   top: 40px;
   right: 0;
@@ -103,5 +102,11 @@
         border: none;
       }
     }
+  }
+}
+@include breakpoints(verySmall) {
+  .minWishlist,
+  .mincart {
+    display: none !important;
   }
 }

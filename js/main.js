@@ -64,7 +64,7 @@ $(function () {
   $('.addToWishlist').click(function () {
     $(this).find('svg').attr('data-prefix', 'fas');
   });
-  // start add to wish list
+  // end add to wish list
 
   // start open shopping
   let openElement = null;
@@ -72,10 +72,10 @@ $(function () {
   function setupToggle(triggerSelector, targetSelector) {
     $(triggerSelector).on('click', function (event) {
       if (openElement && openElement !== targetSelector) {
-        $(openElement).fadeOut(1000);
+        $(openElement).fadeOut(500);
       }
 
-      $(targetSelector).fadeToggle(1000);
+      $(targetSelector).fadeToggle(500);
       openElement = $(targetSelector).is(':visible') ? targetSelector : null;
       event.stopPropagation();
     });
@@ -85,7 +85,7 @@ $(function () {
     });
 
     $(document).on('click', function () {
-      $(targetSelector).fadeOut(1000);
+      $(targetSelector).fadeOut(500);
       openElement = null;
     });
   }
@@ -95,4 +95,12 @@ $(function () {
   setupToggle('.wishlist', '.minWishlist');
 
   // end open shopping
+
+  // Start Toggle Direction
+  $('#toggleDirection').click(function () {
+    $('#rtlStylesheet').prop('disabled', function (_, val) {
+      return !val;
+    });
+  });
+  // End Toggle Direction
 });

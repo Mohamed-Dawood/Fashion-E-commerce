@@ -1,0 +1,83 @@
+body {
+  direction: rtl;
+}
+.language {
+  .container {
+    section {
+      svg {
+        rotate: 180deg;
+      }
+    }
+  }
+}
+
+nav {
+  .container {
+    .middle-nav {
+      .search {
+        input {
+          // padding: 0.5rem 0.5rem 0.5rem 2rem;
+          padding: 0.5rem 2rem 0.5rem 0.5rem !important;
+        }
+        svg {
+          right: 0.5rem;
+        }
+      }
+    }
+    .right-nav {
+      .login {
+        margin: 0 0 0 5rem !important;
+
+        svg {
+          margin: 0 0 0 0.5rem !important;
+        }
+      }
+      .shopping {
+        .minWishlist,
+        .mincart {
+          left: 0 !important;
+          right: unset;
+        }
+      }
+    }
+  }
+}
+aside {
+  right: -350px !important;
+  .links {
+    ul {
+      li {
+        a {
+          svg {
+            margin: 0 0 0 0.7rem !important;
+          }
+        }
+      }
+    }
+  }
+}
+.open {
+  right: 0 !important;
+}
+.mySwiperCollection,
+.mySwiperTrending {
+  section {
+    .image {
+      span {
+        left: unset !important;
+        right: 1rem !important;
+      }
+      .addToWishlist {
+        right: unset !important;
+        left: 1.5rem !important;
+      }
+    }
+  }
+}
+footer {
+  .container {
+    .copy-right {
+      direction: ltr;
+    }
+  }
+}

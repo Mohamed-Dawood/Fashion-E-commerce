@@ -11,6 +11,7 @@
         border-top: 4px solid transparent;
         transition: $transition-duration;
         color: $primary-color;
+        text-transform: capitalize;
         @at-root {
           .product-nav .container > ul > li:has(ul) {
             &:hover {
@@ -52,6 +53,7 @@
   .product-nav {
     ul {
       justify-content: space-between;
+      gap: 10px !important;
       li {
         margin: 0 0 0 0 !important;
         a {

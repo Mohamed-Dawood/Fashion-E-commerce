@@ -10,33 +10,6 @@ var myFirstSwiper = new Swiper('.myFirstSwiper', {
   },
 });
 
-// Initialize the second Swiper instance
-// var mySwiper = new Swiper('.mySwiper', {
-//   slidesPerView: 1,
-//   spaceBetween: 30, // Set space between slides
-//   loop: true,
-//   navigation: {
-//     nextEl: '.product-slider .swiper-button-next',
-//     prevEl: '.product-slider .swiper-button-prev',
-//   },
-//   breakpoints: {
-//     0: {
-//       slidesPerView: 1,
-//       spaceBetween: 30,
-//     },
-//     768: {
-//       // Medium screens (e.g., tablets)
-//       slidesPerView: 2,
-//       spaceBetween: 30,
-//     },
-//     1024: {
-//       // Large screens (e.g., desktops)
-//       slidesPerView: 4,
-//       spaceBetween: 30,
-//     },
-//   },
-// });
-
 function initializeSwiper(selector, nextEl, prevEl) {
   return new Swiper(selector, {
     slidesPerView: 1,
